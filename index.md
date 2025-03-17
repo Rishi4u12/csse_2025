@@ -4,6 +4,13 @@ title: Student Home
 description: Home Page
 hide: true
 ---
+
+
+
+<h1 align=center> Welcome to my page </h1>
+ Hi there ! I am Rishabh Jha. <br/> 
+ <p> Feel free to explore my website. You are the visitor number :  <div id="CounterVisitor"></div>  
+
 <script>
 var n = localStorage.getItem('on_load_counter');
 
@@ -21,9 +28,3 @@ for (var i of nums) {
 }
 
 </script>
-
-
-<h1 align=center> Welcome to my page </h1>
- Hi there ! I am Rishabh Jha. <br/> 
- <p> Feel free to explore my website. You are the visitor number <div id="CounterVisitor"></div>  
-
