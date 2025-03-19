@@ -5,10 +5,29 @@ permalink: /about/
 hide: true
 ---
 
-<h1 align=center> About me </h1>
+<h1 align="center"> About Me </h1>
 <br><br>
 
- Hi, my name is Rishabh, and I have a deep passion for both adventure and technology. I love going on long road trips, as they allow me to explore new places, enjoy scenic views, and experience different cultures. Playing badminton keeps me active and competitive, while partying with friends helps me unwind and create unforgettable memories.
-My journey into the world of programming began in 7th grade when I started learning Java. Over time, my interest in technology has only grown stronger, and I enjoy exploring new concepts, problem-solving, and building creative solutions. <br/>
+<ul>
+    <li><strong>Hi, my name is Rishabh!</strong></li>
+    <li>I have a deep passion for both <strong>adventure and technology</strong>.</li>
+    <li><strong>Hobbies & Interests:</strong>
+        <ul>
+            <li>Love going on <strong>long road trips</strong> to explore new places, enjoy scenic views, and experience different cultures.</li>
+            <li><strong>Playing badminton</strong> keeps me active and competitive.</li>
+            <li><strong>Partying with friends</strong> helps me unwind and create unforgettable memories.</li>
+        </ul>
+    </li>
+    <li><strong>Programming Journey:</strong>
+        <ul>
+            <li>Started learning <strong>Java in 7th grade</strong>.</li>
+            <li>Interest in technology has grown stronger over time.</li>
+            <li>Enjoys <strong>exploring new concepts, problem-solving, and building creative solutions</strong>.</li>
+        </ul>
+    </li>
+</ul>
+
+<br>
 <img src="https://tse1.mm.bing.net/th?id=OIP.XiHJE7GV0Wuo_48SnZPvngHaE8&pid=Api&P=0&h=220" alt="Image description">
+
 
