@@ -93,3 +93,4 @@ stop:
 	@@ps aux | awk -v log_file=$(LOG_FILE) '$$0 ~ "tail -f " log_file { print $$2 }' | xargs kill >/dev/null 2>&1 || true
 	@# removes log
 	@rm -f $(LOG_FILE)
+pwd
