@@ -12,8 +12,8 @@ hide: true
 Hi there! I am Rishabh Jha. <br/> 
 <p> Feel free to explore my website. Enjoy your time! </p>
 
-<a href="/path/to/snake.md" style="text-decoration: none;">
-    <div style="background-color: #00FF00; color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold;" cursorshover="true">
+<a href="/snake/" style="text-decoration: none;">
+    <div style="background-color: #00FF00; color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer;">
         Snake Game
     </div>
 </a>
