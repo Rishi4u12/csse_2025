@@ -13,7 +13,8 @@ Hi there! I am Rishabh Jha. <br/>
 <p> Feel free to explore my website. Enjoy your time! </p>
 
 <a href="/student_2025/snake/" style="text-decoration: none;">
-     style="text-decoration: none; font-family: Arial, sans-serif; background-color: #00FF00; color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer;".
+    
+ <div style="background-color:rgb(0, 255, 34); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;" cursorshover="true">
         Snake Game
     </div>
 </a>
