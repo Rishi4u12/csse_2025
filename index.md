@@ -12,11 +12,13 @@ hide: true
 Hi there! I am Rishabh Jha. <br/> 
 <p> Feel free to explore my website. Enjoy your time! </p>
 
-<a href="/student_2025/snake/" style="text-decoration: none;">
-       <div style="background-color:rgb(0, 255, 34); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;" cursorshover="true">
-        Snake Game
-    </div>
-</a>
+  <!-- Snake Game Button -->
+<button 
+    onclick="window.location.href='/student_2025/snake/'" 
+    style="width: 100%; background-color: rgb(0, 255, 34); color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-bottom: 10px;">
+    Snake Game
+</button>
+
 
  <div style="background-color: #FF0000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;" cursorshover="true">
             Turtle v0.0
