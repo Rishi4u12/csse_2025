@@ -21,10 +21,21 @@ Hi there! I am Rishabh Jha. <br/>
 
 
  <!-- Turtle v0.0 -->
-<button onclick="window.location.href='/student_2025/turtle/v0.0'" 
-    style="width: 100%; background-color: #FF0000; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-bottom: 10px;">
-    Turtle v0.0
-</button>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>RPG Game</title>
+    <script src="script.js"></script> <!-- Adjust path as needed -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Welcome to the RPG Game</h1>
+    <div id="game"></div>
+    <script src="game.js"></script>
+  </body>
+</html>
+
 
 <!-- Turtle v0.1 -->
 <button onclick="window.location.href='/student_2025/turtle/v0.1'" 

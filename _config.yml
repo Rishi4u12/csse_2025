@@ -26,3 +26,6 @@ minima:
 plugins:
   - jekyll-remote-theme
 
+navbar:
+  - title: RPG
+    url: /rpg/
