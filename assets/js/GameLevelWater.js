@@ -1,8 +1,8 @@
 // To build GameLevels, each contains GameObjects from below imports
 import GameEnv from './GameEnv.js';
 import Background from './Background.js';
-import PlayerOne from './PlayerOne.js';
-import PlayerTwo from './PlayerTwo.js';
+import PlayerOne from '../../student_2025/turtle/v0.0/latest/PlayerOne.js';
+import PlayerTwo from '../../student_2025/turtle/v0.0/latest/PlayerTwo.js';
 import NpcFrog from './NpcFrog.js';
 
 
