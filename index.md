@@ -16,11 +16,10 @@ hide: true
 
 <!-- Turtle v0.0 -->
 <button 
-    onclick="window.location.href='/student_2025/turtle/v0.0/latest/index.html'" 
-    style="width: 100%; background-color: #FF0000; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-bottom: 10px;">
+    onclick="window.location.href='/student_2025/turtle/v0.0/latest/index.html'"
+ style="width: 100%; background-color: #FF8800; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-bottom: 10px;">
     Turtle v0.0
 </button>
-
 <!-- Turtle v0.1 -->
 <button 
     onclick="window.location.href='/student_2025/turtle/v0.1'" 
