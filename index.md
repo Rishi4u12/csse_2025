@@ -35,12 +35,7 @@ Hi there! I am Rishabh Jha. <br/>
     <script src="game.js"></script>
   </body>
 </html>
-<!-- RPG Game Button -->
-<button 
-    onclick="window.location.href='/student_2025/turtle/v0.0/latest/index.html'" 
-    style="width: 100%; background-color: #FF0000; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-bottom: 10px;">
-    RPG Game
-</button>
+
 
 <!-- Turtle v0.1 -->
 <button onclick="window.location.href='/student_2025/turtle/v0.1'" 
