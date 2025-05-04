@@ -68,7 +68,7 @@ permalink: /snake/
     }
 </style>
 
-<h2>Snake</h2>
+<h2>Snake Game</h2>
 <div class="container">
     <header class="pb-3 mb-4 border-bottom border-primary text-dark">
         <p class="fs-4">Score: <span id="score_value">0</span></p>
