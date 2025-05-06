@@ -36,7 +36,7 @@ permalink: /rpg/
 <script type="module">
     import GameControl from '{{site.baseurl}}/assets/js/rpg/latest/GameControl.js';
 
-    const path = "{{site.baseurl}}{{site.baseurl}}";
+    const path = "{{site.baseurl}}";
 
     // Start game engine
     GameControl.start(path);
