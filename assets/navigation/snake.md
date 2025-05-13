@@ -233,7 +233,7 @@ permalink: /snake/
             ctx.fillStyle = "royalblue";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            snake.forEach(part => drawBlock(food.x, food.mak, "rgb(255, 0, 0)"); // Red in RGB
+            snake.forEach(part => drawBlock(food.x, food.y, "rgb(255, 0, 0)"); // Red in RGB
             drawBlock(food.x, food.y, "#FF0000");
         };
 
