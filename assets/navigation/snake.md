@@ -17,7 +17,7 @@ permalink: /snake/
         display: none;
         border-style: solid;
         border-width: 10px;
-        border-color: #FFFFFF;
+        border-color:rgb(8, 12, 245);
     }
 
     canvas:focus {
@@ -72,7 +72,7 @@ permalink: /snake/
     <header class="pb-3 mb-4 border-bottom border-primary text-dark">
         <p class="fs-4">Score: <span id="score_value">0</span></p>
         <p class="fs-4">High Score: <span id="high_score_value">0</span></p>
-        <button id="reset_high_score" style="background-color: #FF0000; color: white; padding: 5px 10px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+        <button id="reset_high_score" style="background-color:rgb(0, 204, 255); color: white; padding: 5px 10px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
             Reset High Score
         </button>
     </header>
@@ -233,7 +233,7 @@ permalink: /snake/
             ctx.fillStyle = "royalblue";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            snake.forEach(part => drawBlock(part.x, part.y, "#FFFFFF"));
+            snake.forEach(part => drawBlock(food.x, food.mak, "rgb(255, 0, 0)"); // Red in RGB
             drawBlock(food.x, food.y, "#FF0000");
         };
 
