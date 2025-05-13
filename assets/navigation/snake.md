@@ -17,7 +17,7 @@ permalink: /snake/
         display: none;
         border-style: solid;
         border-width: 10px;
-        border-color:rgb(8, 12, 245);
+        border-color: rgb(8, 12, 245);
     }
 
     canvas:focus {
@@ -233,8 +233,8 @@ permalink: /snake/
             ctx.fillStyle = "royalblue";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            snake.forEach(part => drawBlock(food.x, food.y, "rgb(255, 0, 0)"); // Red in RGB
-            drawBlock(food.x, food.y, "#FF0000");
+            snake.forEach(part => drawBlock(part.x, part.y, "lime"));
+            drawBlock(food.x, food.y, "red");
         };
 
         /* Utility Functions */
@@ -263,40 +263,28 @@ permalink: /snake/
             button_setting_menu.onclick = () => showScreen(SCREEN_SETTING);
             button_setting_menu1.onclick = () => showScreen(SCREEN_SETTING);
 
+            // Add event listener for arrow keys
             window.addEventListener("keydown", (evt) => {
-                if (evt.code === "Space" && SCREEN !== SCREEN_SNAKE) newGame();
-                /* Event Listeners */
-window.onload = () => {
-    button_new_game.onclick = newGame;
-    button_new_game1.onclick = newGame;
-    button_new_game2.onclick = newGame;
-    button_setting_menu.onclick = () => showScreen(SCREEN_SETTING);
-    button_setting_menu1.onclick = () => showScreen(SCREEN_SETTING);
+                if (SCREEN !== SCREEN_SNAKE) {
+                    if (evt.code === "Space") newGame();
+                    return;
+                }
 
-    // Add event listener for arrow keys
-    window.addEventListener("keydown", (evt) => {
-        if (SCREEN !== SCREEN_SNAKE) {
-            if (evt.code === "Space") newGame();
-            return;
-        }
-
-        // Update snake direction based on arrow keys
-        switch (evt.code) {
-            case "ArrowUp":
-                if (snake_dir !== 2) snake_next_dir = 0; // Up
-                break;
-            case "ArrowRight":
-                if (snake_dir !== 3) snake_next_dir = 1; // Right
-                break;
-            case "ArrowDown":
-                if (snake_dir !== 0) snake_next_dir = 2; // Down
-                break;
-            case "ArrowLeft":
-                if (snake_dir !== 1) snake_next_dir = 3; // Left
-                break;
-        }
-    });
-};
+                // Update snake direction based on arrow keys
+                switch (evt.code) {
+                    case "ArrowUp":
+                        if (snake_dir !== 2) snake_next_dir = 0; // Up
+                        break;
+                    case "ArrowRight":
+                        if (snake_dir !== 3) snake_next_dir = 1; // Right
+                        break;
+                    case "ArrowDown":
+                        if (snake_dir !== 0) snake_next_dir = 2; // Down
+                        break;
+                    case "ArrowLeft":
+                        if (snake_dir !== 1) snake_next_dir = 3; // Left
+                        break;
+                }
             });
         };
     })();
