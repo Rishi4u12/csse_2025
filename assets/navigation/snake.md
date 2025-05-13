@@ -254,6 +254,17 @@ permalink: /snake/
             ele_score.textContent = value;
             updateHighScore(value); // Check and update high score
         };
+
+        /* Event Listeners */
+        window.onload = () => {
+            button_new_game.onclick = newGame;
+            button_new_game1.onclick = newGame;
+            button_new_game2.onclick = newGame;
+            button_setting_menu.onclick = () => showScreen(SCREEN_SETTING);
+            button_setting_menu1.onclick = () => showScreen(SCREEN_SETTING);
+
+            window.addEventListener("keydown", (evt) => {
+                if (evt.code === "Space" && SCREEN !== SCREEN_SNAKE) newGame();
                 /* Event Listeners */
 window.onload = () => {
     button_new_game.onclick = newGame;
@@ -286,5 +297,7 @@ window.onload = () => {
         }
     });
 };
+            });
+        };
     })();
 </script>
