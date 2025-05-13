@@ -229,13 +229,16 @@ permalink: /snake/
         };
 
         /* Render Game */
-        const renderGame = () => {
-            ctx.fillStyle = "royalblue";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+       const renderGame = () => {
+    ctx.fillStyle = "royalblue";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            snake.forEach(part => drawBlock(part.x, part.y, "lime"));
-            drawBlock(food.x, food.y, "red");
-        };
+    // Draw the snake
+    snake.forEach(part => drawBlock(part.x, part.y, "lime"));
+
+    // Draw the food in red using RGB
+    drawBlock(food.x, food.y, "rgb(255, 0, 0)");
+};
 
         /* Utility Functions */
         const drawBlock = (x, y, color) => {
