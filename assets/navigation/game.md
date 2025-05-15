@@ -3,6 +3,7 @@ layout: base
 title: Platformer
 description: Incorporate student lessons. Gameplay includes enemies, platforms, parallax backgrounds, settings with local storage, etc.  This revision introduces Settings, Leaderboard and Multiplayer.
 image: /images/platformer/backgrounds/home.png
+permalink: /game
 ---
 
 <!-- Syle is now located, as of Jan 2024 v2.0, in _sass/minima/dracula/platformer-styles.scss -->
