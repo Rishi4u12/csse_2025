@@ -6,9 +6,9 @@ image: /images/platformer/backgrounds/home.png
 permalink: /game
 ---
 
-<!-- Syle is now located, as of Jan 2024 v2.0, in _sass/minima/dracula/platformer-styles.scss -->
+<!-- Style is now located, as of Jan 2024 v2.0, in _sass/minima/dracula/platformer-styles.scss -->
 
-<!-- DOM Settings Panel (sidebar id and div), managed by SettingsContro.js -->
+<!-- DOM Settings Panel (sidebar id and div), managed by SettingsControl.js -->
 <div id="sidebar" class="sidebar" style="z-index: 9999"></div>
 <div id="leaderboardDropDown" class="leaderboardDropDown" style="z-index: 9999"></div>
 
@@ -24,7 +24,7 @@ permalink: /game
 <audio id="laserSound" src="{{site.baseurl}}/assets/audio/laser.mp3" preload="auto"></audio>
 <audio id="laserCharge" src="{{site.baseurl}}/assets/audio/charging-laser.mp3" preload="auto"></audio>
 
-<!-- Wrap both the controls and gameplay in a container div -->
+<!-- Game UI and Canvas Container -->
 <div id="canvasContainer">
   <div class="submenu">
     <div id="score">
@@ -82,4 +82,17 @@ permalink: /game
 
     // Game refresh is required when the height and width of the screen are impacted
     window.addEventListener('resize', GameEnv.resize);
+
+    // Example: Play Mushroom sound on first user interaction (for browser compatibility)
+    let soundPlayed = false;
+    function playMushroomSoundOnce() {
+        if (!soundPlayed) {
+            const mushroom = document.getElementById('Mushroom');
+            mushroom.currentTime = 0;
+            mushroom.play();
+            soundPlayed = true;
+        }
+    }
+    window.addEventListener('click', playMushroomSoundOnce, { once: true });
+    window.addEventListener('keydown', playMushroomSoundOnce, { once: true });
 </script>
