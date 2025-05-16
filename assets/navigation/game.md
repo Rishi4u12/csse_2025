@@ -11,16 +11,17 @@ permalink: /game
 <div id="leaderboardDropDown" class="leaderboardDropDown" style="z-index: 9999"></div>
 
 <!-- Audio Elements -->
-<audio id="Mushroom" src="{{ '/assets/audio/Mushroom.mp3' | relative_url }}" preload="auto"></audio>
-<audio id="goombaDeath" src="{{ '/assets/audio/goomba-death.mp3' | relative_url }}" preload="auto"></audio>
-<audio id="PlayerJump" src="{{ '/assets/audio/mario-jump.mp3' | relative_url }}" preload="auto"></audio>
-<audio id="PlayerDeath" src="{{ '/assets/audio/MarioDeath.mp3' | relative_url }}" preload="auto"></audio>
-<audio id="coin" src="{{ '/assets/audio/coin.mp3' | relative_url }}" preload="auto"></audio>
-<audio id="stomp" src="{{ '/assets/audio/stomp2-93279.mp3' | relative_url }}" preload="auto"></audio>
-<audio id="boing" src="{{ '/assets/audio/boing-101318.mp3' | relative_url }}" preload="auto"></audio>
-<audio id="flush" src="{{ '/assets/audio/toilet-flushing.mp3' | relative_url }}" preload="auto"></audio>
-<audio id="laserSound" src="{{ '/assets/audio/laser.mp3' | relative_url }}" preload="auto"></audio>
-<audio id="laserCharge" src="{{ '/assets/audio/charging-laser.mp3' | relative_url }}" preload="auto"></audio>
+<audio id="Mushroom" src="/portfolio 2025/assets/audio/Mushroom.mp3" preload="auto"></audio>
+<audio id="goombaDeath" src="/portfolio 2025/assets/audio/goomba-death.mp3" preload="auto"></audio>
+<audio id="PlayerJump" src="/portfolio 2025/assets/audio/mario-jump.mp3" preload="auto"></audio>
+<audio id="PlayerDeath" src="/portfolio 2025/assets/audio/MarioDeath.mp3" preload="auto"></audio>
+<audio id="coin" src="/portfolio 2025/assets/audio/coin.mp3" preload="auto"></audio>
+<audio id="stomp" src="/portfolio 2025/assets/audio/stomp2-93279.mp3" preload="auto"></audio>
+<audio id="boing" src="/portfolio 2025/assets/audio/boing-101318.mp3" preload="auto"></audio>
+<audio id="flush" src="/portfolio 2025/assets/audio/toilet-flushing.mp3" preload="auto"></audio>
+<audio id="laserSound" src="/portfolio 2025/assets/audio/laser.mp3" preload="auto"></audio>
+<audio id="laserCharge" src="/portfolio 2025/assets/audio/charging-laser.mp3" preload="auto"></audio>
+<audio id="SharkAudio" src="/portfolio 2025/assets/audio/Shark.mp3" preload="auto"></audio>
 
 <!-- Game UI -->
 <div id="canvasContainer">
@@ -75,7 +76,7 @@ permalink: /game
 
   window.addEventListener('resize', GameEnv.resize);
 
-  // Sound Playback on First User Interaction
+  // Sound Playback on First User Interaction (browser compatibility)
   let soundPlayed = false;
   function playMushroomSoundOnce() {
     if (!soundPlayed) {
