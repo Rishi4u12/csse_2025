@@ -1,52 +1,49 @@
 ---
 layout: base
 title: Platformer
-description: Incorporate student lessons. Gameplay includes enemies, platforms, parallax backgrounds, settings with local storage, etc.  This revision introduces Settings, Leaderboard and Multiplayer.
+description: Incorporate student lessons. Gameplay includes enemies, platforms, parallax backgrounds, settings with local storage, etc. This revision introduces Settings, Leaderboard and Multiplayer.
 image: /images/platformer/backgrounds/home.png
 permalink: /game
 ---
 
-<!-- Style is now located, as of Jan 2024 v2.0, in _sass/minima/dracula/platformer-styles.scss -->
-
-<!-- DOM Settings Panel (sidebar id and div), managed by SettingsControl.js -->
+<!-- Sidebar Panels -->
 <div id="sidebar" class="sidebar" style="z-index: 9999"></div>
 <div id="leaderboardDropDown" class="leaderboardDropDown" style="z-index: 9999"></div>
 
 <!-- Audio Elements -->
-<audio id="Mushroom" src="{{site.baseurl}}/assets/audio/Mushroom.mp3" preload="auto"></audio>
-<audio id="goombaDeath" src="{{site.baseurl}}/assets/audio/goomba-death.mp3" preload="auto"></audio>
-<audio id="PlayerJump" src="{{site.baseurl}}/assets/audio/mario-jump.mp3" preload="auto"></audio>
-<audio id="PlayerDeath" src="{{site.baseurl}}/assets/audio/MarioDeath.mp3" preload="auto"></audio>
-<audio id="coin" src="{{site.baseurl}}/assets/audio/coin.mp3" preload="auto"></audio>
-<audio id="stomp" src="{{site.baseurl}}/assets/audio/stomp2-93279.mp3" preload="auto"></audio>
-<audio id="boing" src="{{site.baseurl}}/assets/audio/boing-101318.mp3" preload="auto"></audio>
-<audio id="flush" src="{{site.baseurl}}/assets/audio/toilet-flushing.mp3" preload="auto"></audio>
-<audio id="laserSound" src="{{site.baseurl}}/assets/audio/laser.mp3" preload="auto"></audio>
-<audio id="laserCharge" src="{{site.baseurl}}/assets/audio/charging-laser.mp3" preload="auto"></audio>
+<audio id="Mushroom" src="{{ '/assets/audio/Mushroom.mp3' | relative_url }}" preload="auto"></audio>
+<audio id="goombaDeath" src="{{ '/assets/audio/goomba-death.mp3' | relative_url }}" preload="auto"></audio>
+<audio id="PlayerJump" src="{{ '/assets/audio/mario-jump.mp3' | relative_url }}" preload="auto"></audio>
+<audio id="PlayerDeath" src="{{ '/assets/audio/MarioDeath.mp3' | relative_url }}" preload="auto"></audio>
+<audio id="coin" src="{{ '/assets/audio/coin.mp3' | relative_url }}" preload="auto"></audio>
+<audio id="stomp" src="{{ '/assets/audio/stomp2-93279.mp3' | relative_url }}" preload="auto"></audio>
+<audio id="boing" src="{{ '/assets/audio/boing-101318.mp3' | relative_url }}" preload="auto"></audio>
+<audio id="flush" src="{{ '/assets/audio/toilet-flushing.mp3' | relative_url }}" preload="auto"></audio>
+<audio id="laserSound" src="{{ '/assets/audio/laser.mp3' | relative_url }}" preload="auto"></audio>
+<audio id="laserCharge" src="{{ '/assets/audio/charging-laser.mp3' | relative_url }}" preload="auto"></audio>
 
-<!-- Game UI and Canvas Container -->
+<!-- Game UI -->
 <div id="canvasContainer">
   <div class="submenu">
     <div id="score">
-        Timer: <span id="timeScore">0</span>
+      Timer: <span id="timeScore">0</span>
     </div>
     <div id="score">
-        Coins: <span id="coinScore">0</span>
+      Coins: <span id="coinScore">0</span>
     </div>
     <div id="gameBegin" hidden>
-        <button id="startGame">Start Game</button>
+      <button id="startGame">Start Game</button>
     </div>
     <div id="gameOver" hidden>
-        <button id="restartGame">Restart</button>
+      <button id="restartGame">Restart</button>
     </div>
     <div id="settings">
-        <button id="settings-button">Settings</button>
+      <button id="settings-button">Settings</button>
     </div>
     <div id="leaderboard">
-        <button id="leaderboard-button">Leaderboard</button>
+      <button id="leaderboard-button">Leaderboard</button>
     </div>
   </div>
-  <!-- JavaScript-generated canvas items are inserted here -->
 </div>
 
 <div id="container">
@@ -58,41 +55,44 @@ permalink: /game
 
 <footer id="cut-story"></footer>
 
+<!-- Game Logic -->
 <script type="module">
-    // Imports to drive game
-    import GameSetup from '{{site.baseurl}}/assets/js/platformer3x/GameSetup.js';
-    import GameControl from '{{site.baseurl}}/assets/js/platformer3x/GameControl.js';
-    import SettingsControl from '{{site.baseurl}}/assets/js/platformer3x/SettingsControl.js';
-    import GameEnv from '{{site.baseurl}}/assets/js/platformer3x/GameEnv.js';
-    import Leaderboard from '{{site.baseurl}}/assets/js/platformer3x/Leaderboard.js';
-    import startCutstory from '{{site.baseurl}}/assets/js/platformer3x/Cutstory.js';
-    import RandomEvent from '{{site.baseurl}}/assets/js/platformer3x/RandomEvent.js';
+  import GameSetup from '{{ "/assets/js/platformer3x/GameSetup.js" | relative_url }}';
+  import GameControl from '{{ "/assets/js/platformer3x/GameControl.js" | relative_url }}';
+  import SettingsControl from '{{ "/assets/js/platformer3x/SettingsControl.js" | relative_url }}';
+  import GameEnv from '{{ "/assets/js/platformer3x/GameEnv.js" | relative_url }}';
+  import Leaderboard from '{{ "/assets/js/platformer3x/Leaderboard.js" | relative_url }}';
+  import startCutstory from '{{ "/assets/js/platformer3x/Cutstory.js" | relative_url }}';
+  import RandomEvent from '{{ "/assets/js/platformer3x/RandomEvent.js" | relative_url }}';
 
-    // Setup game data, the objects and levels
-    GameSetup.initLevels("{{site.baseurl}}");
+  // Game initialization
+  GameSetup.initLevels("{{ site.baseurl }}");
+  GameControl.gameLoop();
+  SettingsControl.initialize();
+  Leaderboard.initializeLeaderboard();
+  startCutstory();
+  RandomEvent();
 
-    // Start the PRIMARY game loop
-    GameControl.gameLoop();
+  window.addEventListener('resize', GameEnv.resize);
 
-    // Construct settings sidebar, MVC variable paradigm, and async events to trigger user interaction
-    SettingsControl.initialize();
-    Leaderboard.initializeLeaderboard();
-    startCutstory();
-    RandomEvent();
-
-    // Game refresh is required when the height and width of the screen are impacted
-    window.addEventListener('resize', GameEnv.resize);
-
-    // Example: Play Mushroom sound on first user interaction (for browser compatibility)
-    let soundPlayed = false;
-    function playMushroomSoundOnce() {
-        if (!soundPlayed) {
-            const mushroom = document.getElementById('Mushroom');
-            mushroom.currentTime = 0;
-            mushroom.play();
-            soundPlayed = true;
-        }
+  // Sound Playback on First User Interaction
+  let soundPlayed = false;
+  function playMushroomSoundOnce() {
+    if (!soundPlayed) {
+      const mushroom = document.getElementById('Mushroom');
+      if (mushroom) {
+        mushroom.currentTime = 0;
+        mushroom.volume = 1.0;
+        mushroom.play().catch(err => {
+          console.warn("Sound play failed:", err);
+        });
+        soundPlayed = true;
+      }
     }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('click', playMushroomSoundOnce, { once: true });
     window.addEventListener('keydown', playMushroomSoundOnce, { once: true });
+  });
 </script>
