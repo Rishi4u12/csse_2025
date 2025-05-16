@@ -11,7 +11,7 @@ permalink: /game
 <div id="leaderboardDropDown" class="leaderboardDropDown" style="z-index: 9999"></div>
 
 <!-- Audio Elements -->
-<audio id="Mushroom" src="/portfolio 2025/assets/audio/Mushroom.mp3" preload="auto"></audio>
+<audio id="Mushroom" src="/csse_2025/assets/audio/Mushroom.mp3" preload="auto"></audio>
 <audio id="goombaDeath" src="/portfolio 2025/assets/audio/goomba-death.mp3" preload="auto"></audio>
 <audio id="PlayerJump" src="/portfolio 2025/assets/audio/mario-jump.mp3" preload="auto"></audio>
 <audio id="PlayerDeath" src="/portfolio 2025/assets/audio/MarioDeath.mp3" preload="auto"></audio>
