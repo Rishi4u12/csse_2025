@@ -52,6 +52,12 @@ Hi there! I am Rishabh Jha. <br/>
             Turtle v0.3
         </div>
     </a>
+    <a href="/csse_2025/game/" style="text-decoration: none;">
+        <div style="background-color: #4287f5; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;" cursorshover="true">
+            Mario
+        </div>
+    </a>
+    
    
 </div>
 
