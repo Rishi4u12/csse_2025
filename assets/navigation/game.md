@@ -58,13 +58,18 @@ permalink: /game
 
 <!-- Game Logic -->
 <script type="module">
-  import GameSetup from '{{ "/assets/js/platformer3x/GameSetup.js" | relative_url }}';
-  import GameControl from '{{ "/assets/js/platformer3x/GameControl.js" | relative_url }}';
-  import SettingsControl from '{{ "/assets/js/platformer3x/SettingsControl.js" | relative_url }}';
-  import GameEnv from '{{ "/assets/js/platformer3x/GameEnv.js" | relative_url }}';
-  import Leaderboard from '{{ "/assets/js/platformer3x/Leaderboard.js" | relative_url }}';
-  import startCutstory from '{{ "/assets/js/platformer3x/Cutstory.js" | relative_url }}';
-  import RandomEvent from '{{ "/assets/js/platformer3x/RandomEvent.js" | relative_url }}';
+  <!-- Audio Elements -->
+<audio id="Mushroom" src="/csse_2025/assets/audio/Mushroom.mp3" preload="auto"></audio>
+<audio id="goombaDeath" src="/csse_2025/assets/audio/goomba-death.mp3" preload="auto"></audio>
+<audio id="PlayerJump" src="/csse_2025/assets/audio/mario-jump.mp3" preload="auto"></audio>
+<audio id="PlayerDeath" src="/csse_2025/assets/audio/MarioDeath.mp3" preload="auto"></audio>
+<audio id="coin" src="/csse_2025/assets/audio/coin.mp3" preload="auto"></audio>
+<audio id="stomp" src="/csse_2025/assets/audio/stomp2-93279.mp3" preload="auto"></audio>
+<audio id="boing" src="/csse_2025/assets/audio/boing-101318.mp3" preload="auto"></audio>
+<audio id="flush" src="/csse_2025/assets/audio/toilet-flushing.mp3" preload="auto"></audio>
+<audio id="laserSound" src="/csse_2025/assets/audio/laser.mp3" preload="auto"></audio>
+<audio id="laserCharge" src="/csse_2025/assets/audio/charging-laser.mp3" preload="auto"></audio>
+<audio id="SharkAudio" src="/csse_2025/assets/audio/Shark.mp3" preload="auto"></audio>
 
   // Game initialization
   GameSetup.initLevels("{{ site.baseurl }}");
