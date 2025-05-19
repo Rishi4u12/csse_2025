@@ -10,18 +10,7 @@ permalink: /game
 <div id="sidebar" class="sidebar" style="z-index: 9999"></div>
 <div id="leaderboardDropDown" class="leaderboardDropDown" style="z-index: 9999"></div>
 
-<!-- Audio Elements -->
-<audio id="Mushroom" src="/csse_2025/assets/audio/Mushroom.mp3" preload="auto"></audio>
-<audio id="goombaDeath" src="/portfolio 2025/assets/audio/goomba-death.mp3" preload="auto"></audio>
-<audio id="PlayerJump" src="/portfolio 2025/assets/audio/mario-jump.mp3" preload="auto"></audio>
-<audio id="PlayerDeath" src="/portfolio 2025/assets/audio/MarioDeath.mp3" preload="auto"></audio>
-<audio id="coin" src="/portfolio 2025/assets/audio/coin.mp3" preload="auto"></audio>
-<audio id="stomp" src="/portfolio 2025/assets/audio/stomp2-93279.mp3" preload="auto"></audio>
-<audio id="boing" src="/portfolio 2025/assets/audio/boing-101318.mp3" preload="auto"></audio>
-<audio id="flush" src="/portfolio 2025/assets/audio/toilet-flushing.mp3" preload="auto"></audio>
-<audio id="laserSound" src="/portfolio 2025/assets/audio/laser.mp3" preload="auto"></audio>
-<audio id="laserCharge" src="/portfolio 2025/assets/audio/charging-laser.mp3" preload="auto"></audio>
-<audio id="SharkAudio" src="/portfolio 2025/assets/audio/Shark.mp3" preload="auto"></audio>
+
 
 <!-- Game UI -->
 <div id="canvasContainer">
