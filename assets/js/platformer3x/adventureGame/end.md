@@ -65,6 +65,19 @@ permalink: /gamify/end
         </div>
     `;
     // Create the content
+    // Create the content
+const instructionsDiv = document.createElement('div');
+instructionsDiv.setAttribute('id', 'instructionsOverlay');
+instructionsDiv.setAttribute('style', instructionsStyle);
+instructionsDiv.innerHTML = instructionsHTML;
+document.body.appendChild(instructionsDiv);
+
+// When "Start Game" is clicked, remove overlay and launch the game
+document.getElementById('startGameBtn').addEventListener('click', () => {
+    document.body.removeChild(instructionsDiv);
+    Game.main(environment);
+});
+
 
     // Web Server Environment data
     const environment = {
