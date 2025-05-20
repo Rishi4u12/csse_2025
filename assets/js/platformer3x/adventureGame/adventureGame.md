@@ -10,7 +10,7 @@ permalink: /gamify/adventureGame
 </div>
 
 <script type="module">
-    // Adnventure Game assets locations
+    // Adventure Game assets locations
     import Game from "{{site.baseurl}}/assets/js/adventureGame/Game.js";
     import GameLevelWater from "{{site.baseurl}}/assets/js/adventureGame/GameLevelWater.js";
     import GameLevelDesert from "{{site.baseurl}}/assets/js/adventureGame/GameLevelDesert.js";
@@ -35,7 +35,6 @@ permalink: /gamify/adventureGame
         box-shadow: 0 0 20px rgba(245, 194, 7, 0.5);
     `;
 
-    // Create the content
     const instructionsHTML = `
         <h2 style="color: #f5c207; margin-bottom: 15px; text-align: center;">Welcome!</h2>
         <div style="margin-bottom: 15px;">
@@ -67,9 +66,16 @@ permalink: /gamify/adventureGame
         </div>
     `;
 
+    // Create the instructions overlay
+    const instructionsDiv = document.createElement('div');
+    instructionsDiv.setAttribute('id', 'instructionsOverlay');
+    instructionsDiv.setAttribute('style', instructionsStyle);
+    instructionsDiv.innerHTML = instructionsHTML;
+    document.body.appendChild(instructionsDiv);
+
     // Web Server Environment data
     const environment = {
-        path:"{{site.baseurl}}",
+        path: "{{site.baseurl}}",
         pythonURI: pythonURI,
         javaURI: javaURI,
         fetchOptions: fetchOptions,
@@ -78,8 +84,13 @@ permalink: /gamify/adventureGame
         instructionsStyle: instructionsStyle,
         instructionsHTML: instructionsHTML,
         gameLevelClasses: gameLevelClasses
+    };
 
-    }
-    // Launch Adventure Game
-    Game.main(environment);
+    // Only launch game after user clicks "Start Game"
+    document.getElementById('startGameBtn').addEventListener('click', () => {
+        document.body.removeChild(instructionsDiv);
+        Game.main(environment);
+    });
+
+    // Do NOT auto-launch the game; wait for user to click "Start Game"
 </script>
