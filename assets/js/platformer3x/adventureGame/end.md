@@ -73,25 +73,25 @@ instructionsDiv.innerHTML = instructionsHTML;
 document.body.appendChild(instructionsDiv);
 
 // When "Start Game" is clicked, remove overlay and launch the game
+// Web Server Environment data
+const environment = {
+    path:"{{site.baseurl}}",
+    pythonURI: pythonURI,
+    javaURI: javaURI,
+    fetchOptions: fetchOptions,
+    gameContainer: document.getElementById("gameContainer"),
+    gameCanvas: document.getElementById("gameCanvas"),
+    instructionsStyle: instructionsStyle,
+    instructionsHTML: instructionsHTML,
+    gameLevelClasses: gameLevelClasses
+}
+
+// When "Start Game" is clicked, remove overlay and launch the game
 document.getElementById('startGameBtn').addEventListener('click', () => {
     document.body.removeChild(instructionsDiv);
     Game.main(environment);
 });
 
-
-    // Web Server Environment data
-    const environment = {
-        path:"{{site.baseurl}}",
-        pythonURI: pythonURI,
-        javaURI: javaURI,
-        fetchOptions: fetchOptions,
-        gameContainer: document.getElementById("gameContainer"),
-        gameCanvas: document.getElementById("gameCanvas"),
-        instructionsStyle: instructionsStyle,
-        instructionsHTML: instructionsHTML,
-        gameLevelClasses: gameLevelClasses
-
-    }
-    // Launch Adventure Game
-    Game.main(environment);
+// Launch Adventure Game
+Game.main(environment);
 </script>
