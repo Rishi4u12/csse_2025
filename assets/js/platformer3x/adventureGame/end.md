@@ -6,14 +6,14 @@ permalink: /gamify/end
 
 <div id="gameContainer">
     <div id="promptDropDown" class="promptDropDown" style="z-index: 9999"></div>
-    <canvas id='gameCanvas'></canvas>
+    <canvas id="gameCanvas"></canvas>
 </div>
 
 <script type="module">
-    // Adnventure Game assets locations
+    // Adventure Game assets
     import Game from "{{site.baseurl}}/assets/js/adventureGame/Game.js";
     import GameLevelEnd from "{{site.baseurl}}/assets/js/adventureGame/GameLevelEnd.js";
-    import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api/config.js';
+    import { pythonURI, javaURI, fetchOptions } from "{{site.baseurl}}/assets/js/api/config.js";
 
     const gameLevelClasses = [GameLevelEnd];
 
@@ -38,9 +38,6 @@ permalink: /gamify/end
         <h2 style="color: purple; margin-bottom: 15px; text-align: center;">Welcome to the END!!!!</h2>
         <div style="margin-bottom: 15px;">
             <h3 style="color: purple;">Controls:</h3>
-            <p>• WASD - Move</p>
-            <p>• WASD - Move (Steve)</p>
-            <p>• IJKL - Move (Alex)</p>
             <p>• WASD - Move (Steve)</p>
             <p>• IJKL - Move (Alex)</p>
             <p>• E/U - Interact with NPCs</p>
@@ -48,7 +45,7 @@ permalink: /gamify/end
         </div>
         <div style="margin-bottom: 15px;">
             <h3 style="color: purple;">NPCs:</h3>
-            <p>• Tux: ...</p>
+            <p>• Tux: "You made it this far... congrats, explorer."</p>
         </div>
         <div style="text-align: center;">
             <button id="startGameBtn" style="
@@ -64,21 +61,37 @@ permalink: /gamify/end
             ">Start Game</button>
         </div>
     `;
-    // Create the content
 
-    // Web Server Environment data
-    const environment = {
-        path:"{{site.baseurl}}",
-        pythonURI: pythonURI,
-        javaURI: javaURI,
-        fetchOptions: fetchOptions,
-        gameContainer: document.getElementById("gameContainer"),
-        gameCanvas: document.getElementById("gameCanvas"),
-        instructionsStyle: instructionsStyle,
-        instructionsHTML: instructionsHTML,
-        gameLevelClasses: gameLevelClasses
+    // Display intro instructions modal
+    const showInstructions = () => {
+        const instructionsDiv = document.createElement('div');
+        instructionsDiv.setAttribute('id', 'instructionsOverlay');
+        instructionsDiv.setAttribute('style', instructionsStyle);
+        instructionsDiv.innerHTML = instructionsHTML;
+        document.body.appendChild(instructionsDiv);
 
-    }
-    // Launch Adventure Game
-    Game.main(environment);
+        document.getElementById('startGameBtn').addEventListener('click', () => {
+            document.body.removeChild(instructionsDiv);
+            startGame();
+        });
+    };
+
+    const startGame = () => {
+        const environment = {
+            path: "{{site.baseurl}}",
+            pythonURI: pythonURI,
+            javaURI: javaURI,
+            fetchOptions: fetchOptions,
+            gameContainer: document.getElementById("gameContainer"),
+            gameCanvas: document.getElementById("gameCanvas"),
+            instructionsStyle: instructionsStyle,
+            instructionsHTML: instructionsHTML,
+            gameLevelClasses: gameLevelClasses
+        };
+
+        Game.main(environment);
+    };
+
+    // Show instructions first
+    showInstructions();
 </script>
