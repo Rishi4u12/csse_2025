@@ -10,7 +10,7 @@ permalink: /gamify/end
 </div>
 
 <script type="module">
-    // Adnventure Game assets locations
+    // Adventure Game assets locations
     import Game from "{{site.baseurl}}/assets/js/adventureGame/Game.js";
     import GameLevelEnd from "{{site.baseurl}}/assets/js/adventureGame/GameLevelEnd.js";
     import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api/config.js';
@@ -38,9 +38,6 @@ permalink: /gamify/end
         <h2 style="color: purple; margin-bottom: 15px; text-align: center;">Welcome to the END!!!!</h2>
         <div style="margin-bottom: 15px;">
             <h3 style="color: purple;">Controls:</h3>
-            <p>• WASD - Move</p>
-            <p>• WASD - Move (Steve)</p>
-            <p>• IJKL - Move (Alex)</p>
             <p>• WASD - Move (Steve)</p>
             <p>• IJKL - Move (Alex)</p>
             <p>• E/U - Interact with NPCs</p>
@@ -48,7 +45,7 @@ permalink: /gamify/end
         </div>
         <div style="margin-bottom: 15px;">
             <h3 style="color: purple;">NPCs:</h3>
-            <p>• Tux: ...</p>
+            <p>• Tux: The wise penguin who gives you hints and challenges. Talk to Tux for tips and secrets!</p>
         </div>
         <div style="text-align: center;">
             <button id="startGameBtn" style="
@@ -64,34 +61,32 @@ permalink: /gamify/end
             ">Start Game</button>
         </div>
     `;
-    // Create the content
-    // Create the content
-const instructionsDiv = document.createElement('div');
-instructionsDiv.setAttribute('id', 'instructionsOverlay');
-instructionsDiv.setAttribute('style', instructionsStyle);
-instructionsDiv.innerHTML = instructionsHTML;
-document.body.appendChild(instructionsDiv);
 
-// When "Start Game" is clicked, remove overlay and launch the game
-// Web Server Environment data
-const environment = {
-    path:"{{site.baseurl}}",
-    pythonURI: pythonURI,
-    javaURI: javaURI,
-    fetchOptions: fetchOptions,
-    gameContainer: document.getElementById("gameContainer"),
-    gameCanvas: document.getElementById("gameCanvas"),
-    instructionsStyle: instructionsStyle,
-    instructionsHTML: instructionsHTML,
-    gameLevelClasses: gameLevelClasses
-}
+    // Create the instructions overlay
+    const instructionsDiv = document.createElement('div');
+    instructionsDiv.setAttribute('id', 'instructionsOverlay');
+    instructionsDiv.setAttribute('style', instructionsStyle);
+    instructionsDiv.innerHTML = instructionsHTML;
+    document.body.appendChild(instructionsDiv);
 
-// When "Start Game" is clicked, remove overlay and launch the game
-document.getElementById('startGameBtn').addEventListener('click', () => {
-    document.body.removeChild(instructionsDiv);
-    Game.main(environment);
-});
+    // Web Server Environment data
+    const environment = {
+        path: "{{site.baseurl}}",
+        pythonURI: pythonURI,
+        javaURI: javaURI,
+        fetchOptions: fetchOptions,
+        gameContainer: document.getElementById("gameContainer"),
+        gameCanvas: document.getElementById("gameCanvas"),
+        instructionsStyle: instructionsStyle,
+        instructionsHTML: instructionsHTML,
+        gameLevelClasses: gameLevelClasses
+    };
 
-// Launch Adventure Game
-Game.main(environment);
+    // When "Start Game" is clicked, remove overlay and launch the game
+    document.getElementById('startGameBtn').addEventListener('click', () => {
+        document.body.removeChild(instructionsDiv);
+        Game.main(environment);
+    });
+
+    // Do NOT auto-launch the game; wait for user to click "Start Game"
 </script>
