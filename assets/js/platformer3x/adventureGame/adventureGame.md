@@ -10,6 +10,7 @@ permalink: /gamify/adventureGame
 </div>
 
 <script type="module">
+document.addEventListener('DOMContentLoaded', () => {
     // Adventure Game assets locations
     import Game from "{{site.baseurl}}/assets/js/adventureGame/Game.js";
     import GameLevelWater from "{{site.baseurl}}/assets/js/adventureGame/GameLevelWater.js";
@@ -91,6 +92,5 @@ permalink: /gamify/adventureGame
         document.body.removeChild(instructionsDiv);
         Game.main(environment);
     });
-
-    // Do NOT auto-launch the game; wait for user to click "Start Game"
+});
 </script>
