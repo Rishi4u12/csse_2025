@@ -10,14 +10,12 @@ permalink: /gamify/adventureGame
 </div>
 
 <script type="module">
-// Adventure Game assets locations
-import Game from "{{site.baseurl}}/assets/js/adventureGame/Game.js";
-import GameLevelWater from "{{site.baseurl}}/assets/js/adventureGame/GameLevelWater.js";
-import GameLevelDesert from "{{site.baseurl}}/assets/js/adventureGame/GameLevelDesert.js";
-import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api/config.js';
+import Game from "{{site.baseurl}}/assets/js/platformer3x/adventureGame/Game.js";
+import GameLevelWater from "{{site.baseurl}}/assets/js/platformer3x/adventureGame/GameLevelWater.js";
+import GameLevelDesert from "{{site.baseurl}}/assets/js/platformer3x/adventureGame/GameLevelDesert.js";
+import { pythonURI, javaURI, fetchOptions } from "{{site.baseurl}}/assets/js/platformer3x/api/config.js";
 
-const gameLevelClasses = [GameLevelDesert, GameLevelWater];
-
+// Style for instructions overlay
 const instructionsStyle = `
     position: fixed;
     top: 50%;
@@ -65,6 +63,8 @@ const instructionsHTML = `
         ">Start Game</button>
     </div>
 `;
+
+const gameLevelClasses = [GameLevelDesert, GameLevelWater];
 
 // Wait for DOM to be ready before manipulating it
 window.addEventListener('DOMContentLoaded', () => {
