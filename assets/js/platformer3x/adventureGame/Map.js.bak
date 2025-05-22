@@ -1,2 +1,2 @@
 console.log("SVG Path value:", pathString);
-// Removed invalid path
+path.setAttribute("d", pathString);
