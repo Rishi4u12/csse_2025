@@ -1,6 +1,15 @@
 function isValidPathData(pathData) {
-    // Checks that pathData is a non-empty string and does not contain only whitespace
     if (typeof pathData !== 'string' || pathData.trim().length === 0) return false;
-    // Basic SVG path validation: starts with M/m, contains only valid commands
-    return /^[MmLlHhVvCcSsQqTtAaZz][0-9,\s\.\-]+$/.test(pathData.trim());
+    // Only allow valid SVG path commands and numbers, spaces, commas, dots, and minus signs
+    const validCommands = 'MmLlHhVvCcSsQqTtAaZz';
+    // Split by command letters, keep the letters
+    const parts = pathData.trim().split(/([MmLlHhVvCcSsQqTtAaZz])/).filter(Boolean);
+    // The first part must be a command
+    if (!validCommands.includes(parts[0])) return false;
+    // Check all command letters are valid
+    for (let i = 0; i < parts.length; i += 2) {
+        if (!validCommands.includes(parts[i])) return false;
+    }
+    // Basic check passed
+    return true;
 }
