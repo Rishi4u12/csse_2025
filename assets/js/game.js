@@ -1,12 +1,6 @@
-if (isValidPathData(pathData)) {
-    pathElement.setAttribute('d', pathData);
-}
 function isValidPathData(pathData) {
     // Checks that pathData is a non-empty string and does not contain only whitespace
-    return typeof pathData === 'string' && pathData.trim().length > 0;
-}
-
-// ...existing code...
-if (isValidPathData(pathData)) {
-    pathElement.setAttribute('d', pathData);
+    if (typeof pathData !== 'string' || pathData.trim().length === 0) return false;
+    // Basic SVG path validation: starts with M/m, contains only valid commands
+    return /^[MmLlHhVvCcSsQqTtAaZz][0-9,\s\.\-]+$/.test(pathData.trim());
 }
