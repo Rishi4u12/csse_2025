@@ -57,7 +57,11 @@ Hi there! I am Rishabh Jha. <br/>
             Mario
         </div>
     </a>
-    
+     <a href="/student_2025/gamify/adventureGame" style="text-decoration: none;">
+        <div style="background-color: #4287f5; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;" cursorshover="true">
+            Mario
+        </div>
+    </a>
    
 </div>
 
