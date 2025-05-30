@@ -11,9 +11,9 @@ permalink: /gamify/end
 
 <script type="module">
     // Adventure Game assets locations
-    import Game from "{{site.baseurl}}/assets/js/adventureGame/Game.js";
-    import GameLevelEnd from "{{site.baseurl}}/assets/js/adventureGame/GameLevelEnd.js";
-    import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api/config.js';
+    import Game from "{{site.baseurl}}/assets/js/platformer3x/adventureGame/Game.js";
+    import GameLevelEnd from "{{site.baseurl}}/assets/js/platformer3x/adventureGame/GameLevelEnd.js";
+    import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/platformer3x/api/config.js';
 
     const gameLevelClasses = [GameLevelEnd];
 
