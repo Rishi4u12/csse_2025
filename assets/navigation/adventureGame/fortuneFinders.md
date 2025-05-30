@@ -11,10 +11,10 @@ permalink: /gamify/fortuneFinders
 
 <script type="module">
     // Adnventure Game assets locations
-    import Game from "{{site.baseurl}}/assets/js/adventureGame/Game.js";
-    import GameLevelAirport from "{{site.baseurl}}/assets/js/adventureGame/GameLevelAirport.js";
-    import GameLevelWallstreet from "{{site.baseurl}}/assets/js/adventureGame/GameLevelWallstreet.js";
-    import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api/config.js';
+    import Game from "{{site.baseurl}}/assets/js/platformer3x/adventureGame/Game.js";
+    import GameLevelAirport from "{{site.baseurl}}/assets/js/platformer3x/adventureGame/GameLevelAirport.js";
+    import GameLevelWallstreet from "{{site.baseurl}}/assets/js/platformer3x/adventureGame/GameLevelWallstreet.js";
+    import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets//platformer3x/js/api/config.js';
 
     const gameLevelClasses = [GameLevelAirport, GameLevelWallstreet];
 
