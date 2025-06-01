@@ -13,7 +13,7 @@ permalink: /gamify/end
     // Adventure Game assets locations
     import Game from "{{site.baseurl}}/assets/js/platformer3x/adventureGame/Game.js";
     import GameLevelEnd from "{{site.baseurl}}/assets/js/platformer3x/adventureGame/GameLevelEnd.js";
-    import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/platformer3x/api/config.js';
+    import { pythonURI, javaURI, fetchOptions } from "{{site.baseurl}}/assets/js/platformer3x/api/config.js";
 
     const gameLevelClasses = [GameLevelEnd];
 
@@ -87,6 +87,4 @@ permalink: /gamify/end
         document.body.removeChild(instructionsDiv);
         Game.main(environment);
     });
-
-    // Do NOT auto-launch the game; wait for user to click "Start Game"
 </script>

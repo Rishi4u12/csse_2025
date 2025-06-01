@@ -4,6 +4,7 @@ import Inventory from "./Inventory.js";
 import { defaultItems } from "./items.js";
 
 class Game {
+    
     constructor() {
         // initialize user and launch GameControl 
         this.main(environment);
