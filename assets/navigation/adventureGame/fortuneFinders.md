@@ -16,6 +16,7 @@ permalink: /gamify/fortuneFinders
     import GameLevelWallstreet from "{{site.baseurl}}/assets/js/platformer3x/adventureGame/GameLevelWallstreet.js";
     import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/platformer3x/api/config.js';
 
+
     const gameLevelClasses = [GameLevelAirport, GameLevelWallstreet];
 
     // Web Server Environment data
