@@ -44,7 +44,9 @@ class Character extends GameObject {
      * @param {Object|null} data - The sprite data for the object. If null, a default red square is used.
      */
     constructor(data = null, gameEnv = null) {
+        console.log('reached here -1')
         super(gameEnv);
+        console.log('reached here -2')
         this.data = data;
         this.state = {
             ...this.state,

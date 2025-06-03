@@ -11,9 +11,9 @@ permalink: /gamify/squares
 
 <script type="module">
     // Adnventure Game assets locations
-    import Game from "{{site.baseurl}}/assets/js/adventureGame/Game.js";
-    import GameLevelSquares from "{{site.baseurl}}/assets/js/adventureGame/GameLevelSquares.js";
-    import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api/config.js';
+    import Game from "{{site.baseurl}}/assets/js/platformer3x/adventureGame/Game.js";
+    import GameLevelSquares from "{{site.baseurl}}/assets/js/platformer3x/adventureGame/GameLevelSquares.js";
+    import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/platformer3x/api/config.js';
 
     const gameLevelClasses = [GameLevelSquares];
 
